@@ -663,3 +663,8 @@ h2 {
   .slip__sub { display: none; }
   .slip__title { font-size: 0.9688rem; }
 }
+
+@media (max-width: 640px) {
+  .site-header__inner { flex-wrap: wrap; }
+  .site-header__badge { white-space: normal; font-size: 0.75rem; }
+}
