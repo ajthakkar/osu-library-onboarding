@@ -477,6 +477,9 @@ h2 {
 }
 .lesson-nav--start { justify-content: flex-start; gap: 1rem 1.25rem; }
 .lesson-nav__note { margin: 0; color: var(--muted); font-size: 0.9375rem; }
+.lesson-nav__group { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.lesson-nav__status { flex-basis: 100%; margin: 0; text-align: right; color: var(--muted); font-size: 0.9375rem; }
+.lesson-nav__status:empty { display: none; }
 
 /* ------------------------------------------------------------
    Welcome page
@@ -630,7 +633,9 @@ h2 {
   .check { padding: 1.15rem 1rem 1.25rem; }
   .myth summary { grid-template-columns: auto 1fr; }
   .myth__toggle { grid-column: 2; }
-  .lesson-nav .btn { flex: 1 1 100%; }
+  .lesson-nav .btn, .lesson-nav__group { flex: 1 1 100%; }
+  .lesson-nav__group .btn { flex: 1 1 auto; }
+  .lesson-nav__status { text-align: left; }
   .review__a, .review__link { margin-left: 0; }
   .score { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
   .site-footer__inner { flex-direction: column; gap: 1rem; padding: 1.25rem 1rem; }

@@ -8,6 +8,7 @@
   var STAMP_TILT = [-7, 4, -3, 6, -5, 3];
 
   var main = document.getElementById("main");
+  var canPrint = (function () { try { return window.self === window.top; } catch (e) { return false; } })();
   var slip = document.getElementById("progress");
   var freshStamp = null;
 
@@ -408,10 +409,29 @@
       }).join("") + "</ul></section>" +
       '<nav class="lesson-nav" aria-label="Toolkit actions">' +
       '<a class="btn btn--secondary" href="#welcome">Back to start</a>' +
-      '<button type="button" class="btn btn--primary" id="print">Print or save these links</button>' +
+      '<span class="lesson-nav__group">' +
+      (canPrint ? '<button type="button" class="btn btn--secondary" id="print">Print</button>' : "") +
+      '<button type="button" class="btn btn--primary" id="copy-links">Copy these links</button></span>' +
+      '<p class="lesson-nav__status" role="status" id="copy-status"></p>' +
       "</nav>";
 
-    document.getElementById("print").addEventListener("click", function () { window.print(); });
+    var printBtn = document.getElementById("print");
+    if (printBtn) printBtn.addEventListener("click", function () { window.print(); });
+    document.getElementById("copy-links").addEventListener("click", function () {
+      var status = document.getElementById("copy-status");
+      var text = "University Libraries toolkit\n\n" + M.toolkit.map(function (t) {
+        return t.label + " (" + t.note + "): " + t.href;
+      }).join("\n");
+      function done(msg) { status.textContent = msg; }
+      try {
+        navigator.clipboard.writeText(text).then(
+          function () { done("Copied. Paste the links into your notes."); },
+          function () { done("Your browser blocked copying. Select the links above and copy them instead."); }
+        );
+      } catch (e) {
+        done("Your browser blocked copying. Select the links above and copy them instead.");
+      }
+    });
   }
 
   /* ---------- router ---------- */
