@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your library in 15 minutes – GE Launch Seminar module (student prototype)</title>
+  <meta name="description" content="A 15-minute onboarding module that introduces first-year Ohio State students to University Libraries resources. Student-built prototype.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="preload" href="fonts/libre-franklin-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/source-serif-4-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%274%27 y=%273%27 width=%2724%27 height=%2726%27 rx=%273%27 fill=%27%23f6efdc%27 stroke=%27%23ba0c2f%27 stroke-width=%272.5%27/%3E%3Cpath d=%27M9 11h14M9 16h14M9 21h9%27 stroke=%27%23ba0c2f%27 stroke-width=%272.5%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to lesson content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__title" href="#welcome">
+        <span class="site-header__unit">University Libraries</span>
+        <span class="site-header__course">GE Launch Seminar module</span>
+      </a>
+      <p class="site-header__badge">Student prototype</p>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="card-slip" id="progress" aria-label="Module progress"></aside>
+    <main id="main" class="lesson" tabindex="-1" aria-live="off"></main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>Built by the BDAA Product Development Track team as a prototype for The Ohio State University Libraries. This is not an official University Libraries page. Details were checked in November 2026; hours and services change, so confirm on <a href="https://library.osu.edu" target="_blank" rel="noopener">library.osu.edu</a>.</p>
+      <button type="button" class="text-button" id="reset">Start over</button>
+    </div>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
