@@ -1,5 +1,7 @@
 # Your library in 15 minutes
 
+**Try it:** https://ajthakkar.github.io/osu-library-onboarding/
+
 A prototype onboarding module that introduces first-year Ohio State students to University Libraries resources. It's designed to drop into the GE Launch Seminar, which nearly every new student takes.
 
 Built by the BDAA Product Development Track team as part of our project with The Ohio State University Libraries on new-student awareness of library resources. **This is a student prototype, not an official University Libraries page.**
